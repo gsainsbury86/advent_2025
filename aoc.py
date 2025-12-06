@@ -26,14 +26,17 @@ def download_input(year, day):
 
 
 def read_input(day, test=False):
+    with open(
+            f"inputs/day_{str(day).zfill(2)}_{'test_' if test else ''}input.txt", "r"
+        ) as file:
+        aoc = file.read()
+
     lines = [
         x.strip()
-        for x in open(
-            f"inputs/day_{str(day).zfill(2)}_{'test_' if test else ''}input.txt", "r"
-        )
+        for x in aoc.splitlines()
     ]
 
-    aoc = "\n".join(deepcopy(lines))
+
 
     if "" in lines:
         end = lines.index("")
