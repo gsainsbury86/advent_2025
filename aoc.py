@@ -36,16 +36,14 @@ def read_input(day, test=False):
         for x in aoc.splitlines()
     ]
 
-
-
-    if "" in lines:
-        end = lines.index("")
-
-        G = [[x for x in line.strip()] for line in lines[:end]]
-        lines = lines[end + 1 :]
-
-    else:
-        G = [[x for x in line.strip()] for line in lines]
+    # if "" in lines:
+    #     end = lines.index("")
+    #
+    #     G = [[x for x in line.strip()] for line in lines[:end]]
+    #     lines = lines[end + 1 :]
+    #
+    # else:
+    G = [[x for x in line.strip()] for line in lines]
 
     R = len(G)
     C = len(G[0])
